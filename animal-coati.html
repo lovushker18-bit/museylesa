@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Носуха — Музей леса, Светлогорск</title>
+<meta name="description" content="Носуха: Самый любопытный житель вольера — подходит к самой сетке, чтобы разглядеть гостей не хуже, чем они её.">
+<meta property="og:title" content="Носуха — Музей леса">
+<meta property="og:description" content="Самый любопытный житель вольера — подходит к самой сетке, чтобы разглядеть гостей не хуже, чем они её.">
+<meta property="og:image" content="https://lovushker18-bit.github.io/museylesa/images/animal_coati.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lovushker18-bit.github.io/museylesa/animal-coati.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 2 L26 18 H21 L28 30 H4 L11 18 H6 Z" fill="currentColor"/></svg>
+      </span>
+      Музей леса
+    </a>
+    <nav class="main-nav" aria-label="Разделы сайта">
+      <a href="index.html#about">О музее</a>
+      <a href="animals.html">Все обитатели</a>
+      <a href="index.html#tickets">Билеты</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <a class="btn btn-small btn-amber" href="tel:+79814579361">Позвонить</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero hero--animal">
+    <div class="hero-media">
+      <img src="images/animal_coati.jpg" alt="Носуха в вольере музея" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">Экзотика</p>
+      <h1>Носуха</h1>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="section-inner" style="padding-left:0;">
+      <div class="animal-detail-body">
+        <p>Самый любопытный житель вольера — подходит к самой сетке, чтобы разглядеть гостей не хуже, чем они её. Носухи родом из Южной Америки, но прекрасно прижились в музее и узнают своих смотрителей.</p>
+
+        <div class="animal-detail-actions">
+          <a class="btn btn-amber" href="animals.html">← Все обитатели</a>
+          <a class="btn btn-outline" href="index.html">На главную</a>
+        </div>
+
+        <div class="animal-share">
+          <span class="animal-share-label">Ссылка на эту страницу (удобно для QR-кода у вольера)</span>
+          <button type="button" class="copy-value copy-page-link" data-copy="">
+            animal-coati.html
+            <span class="copy-hint">нажмите, чтобы скопировать ссылку</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Музей леса, Светлогорск</p>
+  <p class="footer-sub">Музей леса всегда рад гостям!</p>
+  <a class="footer-vk" href="https://vk.com/museylesa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor" opacity=".15"/>
+      <text x="12" y="16" font-family="Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="currentColor">VK</text>
+    </svg>
+    <span>@museylesa</span>
+  </a>
+</footer>
+
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

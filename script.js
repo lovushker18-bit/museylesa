@@ -118,6 +118,26 @@
     });
   });
 
+  document.querySelectorAll(".copy-page-link").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var value = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(
+          function () {
+            showToast("Ссылка скопирована");
+          },
+          function () {
+            fallbackCopy(value);
+            showToast("Ссылка скопирована");
+          }
+        );
+      } else {
+        fallbackCopy(value);
+        showToast("Ссылка скопирована");
+      }
+    });
+  });
+
   /* ---------- Scroll listener (throttled via rAF) ---------- */
   var ticking = false;
   function onScroll() {

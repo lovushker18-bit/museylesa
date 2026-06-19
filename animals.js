@@ -31,29 +31,18 @@
     errorEl.textContent = "";
     var firstField = document.getElementById("animalPhoto");
     if (firstField) firstField.focus();
-    document.addEventListener("keydown", onKeydown);
   }
 
   function closeModal() {
     overlay.classList.remove("is-open");
     form.reset();
     errorEl.textContent = "";
-    document.removeEventListener("keydown", onKeydown);
     if (openBtn) openBtn.focus();
-  }
-
-  function onKeydown(e) {
-    if (e.key === "Escape") closeModal();
   }
 
   if (openBtn) openBtn.addEventListener("click", openModal);
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
-  if (overlay) {
-    overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) closeModal();
-    });
-  }
 
   function readSavedCards() {
     try {
@@ -89,6 +78,12 @@
     del.setAttribute("aria-label", "Удалить карточку");
     del.textContent = "✕";
     del.addEventListener("click", function () {
+      var code = window.prompt("Введите код доступа, чтобы удалить карточку «" + card.name + "»:");
+      if (code === null) return;
+      if (code.trim().toLowerCase() !== ADMIN_CODE) {
+        alert("Неверный код. Карточка не удалена.");
+        return;
+      }
       if (confirm("Удалить карточку «" + card.name + "»? Это действие необратимо.")) {
         removeCard(card.id);
         fig.remove();

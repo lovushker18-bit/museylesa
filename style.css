@@ -387,12 +387,31 @@ a{color:inherit;}
   gap:18px;
   margin-top:2em;
 }
+.animal-card-link{
+  display:flex;
+  text-decoration:none;
+  color:inherit;
+  height:100%;
+}
+.animal-card-link .animal-card{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.animal-card-link .animal-card figcaption{
+  flex:1;
+}
+.animal-card-link:hover .animal-card{
+  border-color:rgba(201,138,53,.45);
+}
+
 .animal-card{
   margin:0;
   border-radius:14px;
   overflow:hidden;
   background:var(--hemlock-soft);
   border:1px solid rgba(244,238,220,.1);
+  transition:border-color .25s ease;
 }
 .animal-card img{
   width:100%;
@@ -558,6 +577,51 @@ a{color:inherit;}
   border:1px solid rgba(244,238,220,.25);
 }
 .btn-ghost-dark:hover{border-color:var(--birch);}
+.btn-outline{
+  background:transparent;
+  color:var(--bark);
+  border:1px solid rgba(74,51,32,.35);
+}
+.btn-outline:hover{background:rgba(74,51,32,.07); border-color:var(--bark);}
+
+/* ---------- Individual animal page hero ---------- */
+.hero--animal{
+  min-height:56vh;
+}
+.hero--animal .hero-content{
+  padding-bottom:60px;
+  max-width:900px;
+}
+.hero--animal h1{
+  font-size:clamp(2.4rem, 6vw, 4rem);
+}
+.animal-detail-body{
+  max-width:720px;
+}
+.animal-detail-body p{
+  font-size:1.12rem;
+  line-height:1.7;
+}
+.animal-detail-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:1.8em;
+}
+.animal-share{
+  margin-top:2.4em;
+  padding-top:1.8em;
+  border-top:1px solid rgba(74,51,32,.15);
+}
+.animal-share-label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--bark-soft);
+  margin-bottom:.6em;
+}
 
 /* ---------- Locally added cards ---------- */
 .local-card{position:relative;}
