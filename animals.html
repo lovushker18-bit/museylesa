@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Все обитатели — Музей леса, Светлогорск</title>
+<meta name="description" content="Полный список живых обитателей Музея леса в Светлогорске: лань, кролик, носуха, сова, хамелеон, енот, фазаны и другие соседи по вольерам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 2 L26 18 H21 L28 30 H4 L11 18 H6 Z" fill="currentColor"/></svg>
+      </span>
+      Музей леса
+    </a>
+    <nav class="main-nav" aria-label="Управление страницей">
+      <button type="button" class="nav-add-btn" id="openAddModal">+ Добавить</button>
+    </nav>
+    <a class="btn btn-small btn-amber" href="index.html">Вернуться обратно</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="section section-dark" style="padding-top:140px;">
+    <div class="section-inner" style="padding-left:0;">
+      <a href="index.html" class="back-link">← Назад на главную</a>
+      <p class="eyebrow eyebrow-light">Живой уголок музея</p>
+      <h1 style="font-size:clamp(2.2rem, 5vw, 3.4rem); color:var(--birch);">Все обитатели музея</h1>
+      <p style="max-width:62ch;">На главной странице — лишь часть наших соседей. Здесь собраны все звери, птицы и террариумные жители, с которыми можно встретиться, заглянув в музей.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="section-inner" style="padding-left:0;">
+      <div class="animal-grid" id="animalGrid">
+
+        <figure class="animal-card">
+          <img src="images/animal_deer.jpg" alt="Пятнистая лань в вольере музея леса" loading="lazy">
+          <figcaption>
+            <span class="tag">Копытные</span>
+            <strong>Лань</strong>
+            <p>Тихая соседка музейного двора. Пятнистый летний окрас помогает ей прятаться среди деревьев почти как в дикой природе.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_rabbit.jpg" alt="Кролик, отдыхающий в сене" loading="lazy">
+          <figcaption>
+            <span class="tag">Зайцеобразные</span>
+            <strong>Кролик</strong>
+            <p>Никуда не торопится и охотнее всего проводит день, зарывшись в сено, — самый невозмутимый житель вольеров.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_coati.jpg" alt="Носуха в вольере музея" loading="lazy">
+          <figcaption>
+            <span class="tag">Экзотика</span>
+            <strong>Носуха</strong>
+            <p>Самый любопытный житель вольера — подходит к самой сетке, чтобы разглядеть гостей не хуже, чем они её.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_owl.jpg" alt="Сова на жёрдочке в вольере" loading="lazy">
+          <figcaption>
+            <span class="tag">Птицы</span>
+            <strong>Сова</strong>
+            <p>Днём дремлет на жёрдочке, а с наступлением сумерек становится настоящей хозяйкой вольера.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_chameleon.jpg" alt="Хамелеон в террариуме музея" loading="lazy">
+          <figcaption>
+            <span class="tag">Террариум</span>
+            <strong>Хамелеон</strong>
+            <p>Меняет цвет прямо на глазах посетителей — в зависимости от настроения, температуры и освещения.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_raccoon.jpg" alt="Енот, выпрашивающий угощение из своего домика" loading="lazy">
+          <figcaption>
+            <span class="tag">Хищники</span>
+            <strong>Енот</strong>
+            <p>Выпрашивает угощение лапкой через окошко домика — отказать ему почти невозможно.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="animal-card">
+          <img src="images/animal_pheasant.jpg" alt="Фазан с двумя самками в вольере музея" loading="lazy">
+          <figcaption>
+            <span class="tag">Птицы</span>
+            <strong>Фазаны</strong>
+            <p>Яркий самец и его более скромные по окрасу соседки разгуливают по вольеру, будто сошли со страниц книги про лес.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="note" style="margin-top:2.2em;">Список пополняется — карточки, добавленные через форму «Добавить», сохраняются в этом браузере.</p>
+
+      <a href="index.html" class="btn btn-amber" style="margin-top:1.6em;">← Вернуться на главную</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Музей леса, Светлогорск</p>
+  <p class="footer-sub">Музей леса всегда рад гостям!</p>
+  <a class="footer-vk" href="https://vk.com/museylesa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor" opacity=".15"/>
+      <text x="12" y="16" font-family="Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="currentColor">VK</text>
+    </svg>
+    <span>@museylesa</span>
+  </a>
+</footer>
+
+<!-- ---------- Модальное окно добавления карточки ---------- -->
+<div class="modal-overlay" id="addModalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+    <button type="button" class="modal-close" id="closeAddModal" aria-label="Закрыть">✕</button>
+    <h3 id="addModalTitle">Добавить нового жителя</h3>
+    <p class="modal-hint">⚠ Карточка сохранится только в этом браузере. Чтобы она появилась у всех посетителей сайта, дополнительно отправьте фото и текст создателю сайта.</p>
+
+    <form id="addAnimalForm">
+      <label class="field">
+        <span>Фото животного</span>
+        <input type="file" accept="image/*" id="animalPhoto" required>
+      </label>
+      <label class="field">
+        <span>Название</span>
+        <input type="text" id="animalName" placeholder="Например: Белка" required>
+      </label>
+      <label class="field">
+        <span>Описание</span>
+        <textarea id="animalDesc" rows="3" placeholder="Пара предложений о новом обитателе" required></textarea>
+      </label>
+      <label class="field">
+        <span>Код доступа</span>
+        <input type="password" id="adminCode" placeholder="Введите код для подтверждения" required>
+      </label>
+      <p class="form-error" id="formError" role="alert"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost-dark" id="cancelAddModal">Отмена</button>
+        <button type="submit" class="btn btn-amber">Сохранить карточку</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+<script src="animals.js"></script>
+</body>
+</html>
