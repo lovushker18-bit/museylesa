@@ -859,3 +859,193 @@ a.animal-cta:hover{
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1; transform:none; transition:none;}
 }
+
+/* ---------- Animal detail: layout, field card, observations ---------- */
+.hero-latin{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  letter-spacing:.06em;
+  color:var(--lichen-soft);
+  opacity:.85;
+  margin:.2em 0 0;
+}
+.back-link--dark{color:var(--bark-soft);}
+.back-link--dark:hover{color:var(--bark);}
+
+.animal-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:48px;
+  align-items:start;
+}
+@media (max-width: 860px){
+  .animal-layout{grid-template-columns:1fr; gap:32px;}
+}
+
+.notice-block{
+  margin-top:2.4em;
+  padding-top:1.6em;
+  border-top:1px solid rgba(74,51,32,.15);
+}
+.notice-title{
+  font-size:1.15rem;
+  font-weight:600;
+  margin:0 0 .8em;
+  color:var(--bark);
+}
+.notice-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:62ch;
+}
+.notice-list li{
+  position:relative;
+  padding-left:1.5em;
+  margin-bottom:.75em;
+  line-height:1.6;
+  font-size:1rem;
+}
+.notice-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.62em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--lichen);
+}
+
+.field-card{
+  position:sticky;
+  top:110px;
+  background:var(--hemlock);
+  color:var(--birch-soft);
+  border-radius:14px;
+  padding:1.5em 1.4em 1.3em;
+  border:1px solid rgba(147,171,111,.25);
+}
+@media (max-width: 860px){
+  .field-card{position:static;}
+}
+.field-card-title{
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--amber-light);
+  margin:0 0 1.1em;
+}
+.field-list{margin:0;}
+.field-row{
+  padding:.7em 0;
+  border-top:1px solid rgba(244,238,220,.1);
+}
+.field-row:first-child{border-top:none; padding-top:0;}
+.field-row dt{
+  font-size:.72rem;
+  letter-spacing:.04em;
+  color:var(--lichen-soft);
+  margin-bottom:.25em;
+}
+.field-row dd{
+  margin:0;
+  font-size:.95rem;
+  line-height:1.45;
+  color:var(--birch);
+}
+
+/* ---------- Neighbour navigation ---------- */
+.neighbours-section{padding-top:56px; padding-bottom:56px;}
+.neighbours-title{
+  font-size:1.25rem;
+  color:var(--birch);
+  margin:0 0 1.1em;
+}
+.neighbours{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:16px;
+}
+.neighbour{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 16px 12px 12px;
+  border-radius:14px;
+  background:var(--hemlock-soft);
+  border:1px solid rgba(244,238,220,.1);
+  text-decoration:none;
+  color:var(--birch);
+  transition:border-color .25s ease, background-color .25s ease;
+}
+.neighbour:hover{
+  border-color:rgba(201,138,53,.5);
+  background:rgba(201,138,53,.08);
+}
+.neighbour img{
+  width:64px;
+  height:64px;
+  border-radius:10px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.neighbour--next{
+  flex-direction:row-reverse;
+  text-align:right;
+  padding:12px 12px 12px 16px;
+}
+.neighbour-text{display:flex; flex-direction:column; gap:.2em;}
+.neighbour-dir{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.08em;
+  color:var(--lichen-soft);
+}
+.neighbour-name{
+  font-family:var(--font-display);
+  font-size:1.1rem;
+  font-weight:600;
+}
+
+/* ---------- Locally added cards: link wrapper + extended form ---------- */
+.local-card-wrap{position:relative; display:flex;}
+.local-card-wrap .animal-card-link{flex:1;}
+.local-card-wrap .local-card-delete{opacity:0;}
+.local-card-wrap:hover .local-card-delete,
+.local-card-delete:focus-visible{opacity:1;}
+
+.field-group{
+  margin:0 0 1.1em;
+  border:1px solid rgba(244,238,220,.14);
+  border-radius:10px;
+  padding:.2em .9em;
+  background:rgba(244,238,220,.03);
+}
+.field-group > summary{
+  cursor:pointer;
+  padding:.75em 0;
+  font-size:.92rem;
+  color:var(--birch-soft);
+}
+.field-group[open] > summary{
+  border-bottom:1px solid rgba(244,238,220,.12);
+  margin-bottom:.9em;
+}
+.field-group-hint{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.06em;
+  color:var(--lichen-soft);
+  opacity:.75;
+  margin-left:.5em;
+}
+.field-row-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 14px;
+}
+@media (max-width: 560px){
+  .field-row-2{grid-template-columns:1fr;}
+}

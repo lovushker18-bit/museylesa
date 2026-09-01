@@ -44,6 +44,11 @@
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
 
+  function val(id) {
+    var node = document.getElementById(id);
+    return node ? (node.value || "").trim() : "";
+  }
+
   function readSavedCards() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
@@ -63,21 +68,47 @@
   }
 
   function buildCardEl(card) {
+    var wrap = document.createElement("div");
+    wrap.className = "local-card-wrap";
+    wrap.setAttribute("data-id", card.id);
+
+    var link = document.createElement("a");
+    link.className = "animal-card-link";
+    link.href = "animal.html?id=" + encodeURIComponent(card.id);
+
     var fig = document.createElement("figure");
     fig.className = "animal-card local-card";
-    fig.setAttribute("data-id", card.id);
 
     var img = document.createElement("img");
     img.src = card.image;
     img.alt = card.name;
     img.loading = "lazy";
 
+    var figcaption = document.createElement("figcaption");
+    var tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = card.tag || "Новый житель";
+    var strong = document.createElement("strong");
+    strong.textContent = card.name;
+    var p = document.createElement("p");
+    p.textContent = shortText(card.description);
+
+    figcaption.appendChild(tag);
+    figcaption.appendChild(strong);
+    figcaption.appendChild(p);
+
+    fig.appendChild(img);
+    fig.appendChild(figcaption);
+    link.appendChild(fig);
+
     var del = document.createElement("button");
     del.type = "button";
     del.className = "local-card-delete";
     del.setAttribute("aria-label", "Удалить карточку");
-    del.textContent = "✕";
-    del.addEventListener("click", function () {
+    del.textContent = "\u2715";
+    del.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       var code = window.prompt("Введите код доступа, чтобы удалить карточку «" + card.name + "»:");
       if (code === null) return;
       if (code.trim().toLowerCase() !== ADMIN_CODE) {
@@ -86,27 +117,21 @@
       }
       if (confirm("Удалить карточку «" + card.name + "»? Это действие необратимо.")) {
         removeCard(card.id);
-        fig.remove();
+        wrap.remove();
       }
     });
 
-    var figcaption = document.createElement("figcaption");
-    var tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = "Новый житель";
-    var strong = document.createElement("strong");
-    strong.textContent = card.name;
-    var p = document.createElement("p");
-    p.textContent = card.description;
+    wrap.appendChild(link);
+    wrap.appendChild(del);
+    return wrap;
+  }
 
-    figcaption.appendChild(tag);
-    figcaption.appendChild(strong);
-    figcaption.appendChild(p);
-
-    fig.appendChild(img);
-    fig.appendChild(del);
-    fig.appendChild(figcaption);
-    return fig;
+  function shortText(text) {
+    var t = String(text || "").replace(/\s+/g, " ").trim();
+    if (t.length <= 150) return t;
+    var m = t.slice(0, 150).match(/^[\s\S]*[.!?](?=\s)/);
+    if (m && m[0].length > 40) return m[0];
+    return t.slice(0, 147).trim() + "…";
   }
 
   function renderSavedCards() {
@@ -192,6 +217,16 @@
         var card = {
           id: Date.now(),
           name: name,
+          tag: val("animalTag"),
+          latin: val("animalLatin"),
+          group: val("animalGroup"),
+          food: val("animalFood"),
+          active: val("animalActive"),
+          place: val("animalPlace"),
+          notice: val("animalNotice")
+            .split("\n")
+            .map(function (line) { return line.trim(); })
+            .filter(Boolean),
           description: description,
           image: dataUrl
         };
@@ -206,7 +241,8 @@
         }
         closeModal();
         if (ok) {
-          showToast("Карточка добавлена в этом браузере");
+          showToast("Карточка добавлена — открывается её страница");
+          window.location.href = "animal.html?id=" + encodeURIComponent(card.id);
         } else {
           showToast("Карточка показана, но не сохранилась (нет места в хранилище браузера)");
         }

@@ -164,8 +164,51 @@
       </label>
       <label class="field">
         <span>Описание</span>
-        <textarea id="animalDesc" rows="3" placeholder="Пара предложений о новом обитателе" required></textarea>
+        <textarea id="animalDesc" rows="4" placeholder="Пара абзацев о новом обитателе. Пустая строка начинает новый абзац." required></textarea>
       </label>
+
+      <details class="field-group">
+        <summary>Подробности для страницы обитателя <span class="field-group-hint">необязательно</span></summary>
+
+        <div class="field-row-2">
+          <label class="field">
+            <span>Категория</span>
+            <input type="text" id="animalTag" placeholder="Птицы, Хищники, Террариум…">
+          </label>
+          <label class="field">
+            <span>Латинское название</span>
+            <input type="text" id="animalLatin" placeholder="Sciurus vulgaris">
+          </label>
+        </div>
+
+        <div class="field-row-2">
+          <label class="field">
+            <span>Группа</span>
+            <input type="text" id="animalGroup" placeholder="Грызуны, семейство беличьих">
+          </label>
+          <label class="field">
+            <span>Чем питается</span>
+            <input type="text" id="animalFood" placeholder="Орехи, семена, почки">
+          </label>
+        </div>
+
+        <div class="field-row-2">
+          <label class="field">
+            <span>Когда активен</span>
+            <input type="text" id="animalActive" placeholder="Днём">
+          </label>
+          <label class="field">
+            <span>Где искать</span>
+            <input type="text" id="animalPlace" placeholder="Вольер во дворе музея">
+          </label>
+        </div>
+
+        <label class="field">
+          <span>На что посмотреть у вольера</span>
+          <textarea id="animalNotice" rows="3" placeholder="По одному наблюдению на строку"></textarea>
+        </label>
+      </details>
+
       <label class="field">
         <span>Код доступа</span>
         <input type="password" id="adminCode" placeholder="Введите код для подтверждения" required>
